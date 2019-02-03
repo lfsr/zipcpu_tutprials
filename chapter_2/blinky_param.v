@@ -7,6 +7,6 @@ module blinky_param(i_clk, o_led, contador_out);
 
 	always@(posedge i_clk)
 		contador <= contador + 1'b1;
-	assign o_led = &contador;//ESTA LINEA NO DEBERIA SER ASÍ PERO QUIERO TINKEREAR :)
+	assign o_led = contador[WIDTH-1];//ESTA LINEA NO DEBERIA SER ASÍ PERO QUIERO TINKEREAR :)
 	assign contador_out[WIDTH-1:0] = contador[WIDTH-1:0]; 
 endmodule

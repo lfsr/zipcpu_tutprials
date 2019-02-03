@@ -76,15 +76,16 @@ VL_INLINE_OPT void Vblinky_param::_sequent__TOP__1(Vblinky_param__Syms* __restri
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vblinky_param::_sequent__TOP__1\n"); );
     Vblinky_param* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Variables
-    VL_SIG16(__Vdly__blinky_param__DOT__contador,15,0);
+    VL_SIG16(__Vdly__blinky_param__DOT__contador,11,0);
     // Body
     __Vdly__blinky_param__DOT__contador = vlTOPp->blinky_param__DOT__contador;
     // ALWAYS at blinky_param.v:8
-    __Vdly__blinky_param__DOT__contador = (0xffffU 
-					   & ((IData)(1U) 
-					      + (IData)(vlTOPp->blinky_param__DOT__contador)));
+    __Vdly__blinky_param__DOT__contador = (0xfffU & 
+					   ((IData)(1U) 
+					    + (IData)(vlTOPp->blinky_param__DOT__contador)));
     vlTOPp->blinky_param__DOT__contador = __Vdly__blinky_param__DOT__contador;
-    vlTOPp->o_led = (0xffffU == (IData)(vlTOPp->blinky_param__DOT__contador));
+    vlTOPp->o_led = (1U & ((IData)(vlTOPp->blinky_param__DOT__contador) 
+			   >> 0xbU));
     vlTOPp->contador_out = vlTOPp->blinky_param__DOT__contador;
 }
 
@@ -92,7 +93,8 @@ void Vblinky_param::_settle__TOP__2(Vblinky_param__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vblinky_param::_settle__TOP__2\n"); );
     Vblinky_param* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->o_led = (0xffffU == (IData)(vlTOPp->blinky_param__DOT__contador));
+    vlTOPp->o_led = (1U & ((IData)(vlTOPp->blinky_param__DOT__contador) 
+			   >> 0xbU));
     vlTOPp->contador_out = vlTOPp->blinky_param__DOT__contador;
 }
 
@@ -150,8 +152,8 @@ void Vblinky_param::_ctor_var_reset() {
     // Body
     i_clk = VL_RAND_RESET_I(1);
     o_led = VL_RAND_RESET_I(1);
-    contador_out = VL_RAND_RESET_I(16);
-    blinky_param__DOT__contador = VL_RAND_RESET_I(16);
+    contador_out = VL_RAND_RESET_I(12);
+    blinky_param__DOT__contador = VL_RAND_RESET_I(12);
     __Vclklast__TOP__i_clk = VL_RAND_RESET_I(1);
     __Vm_traceActivity = VL_RAND_RESET_I(32);
 }

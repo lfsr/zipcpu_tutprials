@@ -39,7 +39,7 @@ void Vblinky_param::traceChgThis__2(Vblinky_param__Syms* __restrict vlSymsp, Ver
     if (0 && vcdp && c) {}  // Prevent unused
     // Body
     {
-	vcdp->chgBus  (c+1,(vlTOPp->blinky_param__DOT__contador),16);
+	vcdp->chgBus  (c+1,(vlTOPp->blinky_param__DOT__contador),12);
     }
 }
 
@@ -51,6 +51,6 @@ void Vblinky_param::traceChgThis__3(Vblinky_param__Syms* __restrict vlSymsp, Ver
     {
 	vcdp->chgBit  (c+2,(vlTOPp->i_clk));
 	vcdp->chgBit  (c+3,(vlTOPp->o_led));
-	vcdp->chgBus  (c+4,(vlTOPp->contador_out),16);
+	vcdp->chgBus  (c+4,(vlTOPp->contador_out),12);
     }
 }

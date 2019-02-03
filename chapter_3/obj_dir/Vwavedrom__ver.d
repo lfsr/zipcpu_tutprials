@@ -1,0 +1,1 @@
+obj_dir/Vwavedrom.cpp obj_dir/Vwavedrom.h obj_dir/Vwavedrom.mk obj_dir/Vwavedrom__Syms.cpp obj_dir/Vwavedrom__Syms.h obj_dir/Vwavedrom__Trace.cpp obj_dir/Vwavedrom__Trace__Slow.cpp obj_dir/Vwavedrom__ver.d obj_dir/Vwavedrom_classes.mk  : /usr/bin/verilator_bin   /usr/bin/verilator_bin wavedrom.v 

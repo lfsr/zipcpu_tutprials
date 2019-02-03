@@ -23,11 +23,11 @@ VL_MODULE(Vblinky_param) {
     // propagate new values into/out from the Verilated model.
     VL_IN8(i_clk,0,0);
     VL_OUT8(o_led,0,0);
-    VL_OUT16(contador_out,15,0);
+    VL_OUT16(contador_out,11,0);
     
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
-    VL_SIG16(blinky_param__DOT__contador,15,0);
+    VL_SIG16(blinky_param__DOT__contador,11,0);
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code

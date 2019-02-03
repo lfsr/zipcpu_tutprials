@@ -59,11 +59,11 @@ void Vblinky_param::traceInitThis__1(Vblinky_param__Syms* __restrict vlSymsp, Ve
     {
 	vcdp->declBit  (c+2,"i_clk",-1);
 	vcdp->declBit  (c+3,"o_led",-1);
-	vcdp->declBus  (c+4,"contador_out",-1,15,0);
+	vcdp->declBus  (c+4,"contador_out",-1,11,0);
 	vcdp->declBit  (c+2,"blinky_param i_clk",-1);
 	vcdp->declBit  (c+3,"blinky_param o_led",-1);
-	vcdp->declBus  (c+4,"blinky_param contador_out",-1,15,0);
-	vcdp->declBus  (c+1,"blinky_param contador",-1,15,0);
+	vcdp->declBus  (c+4,"blinky_param contador_out",-1,11,0);
+	vcdp->declBus  (c+1,"blinky_param contador",-1,11,0);
     }
 }
 
@@ -73,9 +73,9 @@ void Vblinky_param::traceFullThis__1(Vblinky_param__Syms* __restrict vlSymsp, Ve
     if (0 && vcdp && c) {}  // Prevent unused
     // Body
     {
-	vcdp->fullBus  (c+1,(vlTOPp->blinky_param__DOT__contador),16);
+	vcdp->fullBus  (c+1,(vlTOPp->blinky_param__DOT__contador),12);
 	vcdp->fullBit  (c+2,(vlTOPp->i_clk));
 	vcdp->fullBit  (c+3,(vlTOPp->o_led));
-	vcdp->fullBus  (c+4,(vlTOPp->contador_out),16);
+	vcdp->fullBus  (c+4,(vlTOPp->contador_out),12);
     }
 }
